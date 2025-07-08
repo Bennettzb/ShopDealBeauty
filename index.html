@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Premium Beauty Finds</title>
   <style>
     body {
@@ -24,49 +24,64 @@
       color: #222;
     }
     .container {
-      max-width: 1200px;
+      max-width: 1000px;
       margin: auto;
-      padding: 2rem;
+      padding: 2rem 1rem;
     }
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem 3rem;
     }
     .product-card {
       background: white;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
       overflow: hidden;
-      padding: 1rem;
+      padding: 1.2rem 1.5rem 2rem;
       text-align: center;
       transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .product-card:hover {
       transform: translateY(-5px);
     }
     .product-card img {
       width: 100%;
+      max-width: 300px;
       height: auto;
       border-radius: 8px;
+      margin-bottom: 1rem;
+      object-fit: cover;
     }
     .product-card h3 {
-      margin: 0.5rem 0 0.2rem;
-      font-size: 1.1rem;
+      margin: 0 0 0.5rem;
+      font-size: 1.3rem;
+      color: #222;
     }
     .product-card p {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: #555;
+      line-height: 1.4;
+      text-align: left;
+      margin-bottom: 1rem;
+      flex-grow: 1;
     }
     .product-card a {
       display: inline-block;
-      margin-top: 0.7rem;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       background-color: #222;
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      font-weight: 500;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      margin-top: auto;
+    }
+    .product-card a:hover {
+      background-color: #444;
     }
     .about {
       margin-top: 3rem;
@@ -82,6 +97,14 @@
       font-size: 0.85rem;
       color: #aaa;
     }
+    @media (max-width: 700px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+      .product-card img {
+        max-width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -92,40 +115,86 @@
   <div class="container">
     <section class="product-grid">
       <div class="product-card">
-        <img src="https://m.media-amazon.com/images/I/51RQG5Bgx2L._SL1000_.jpg" alt="Luxury Vitamin C Serum">
+        <img src="https://images.unsplash.com/photo-1606813902939-0cb9e9099c93?auto=format&fit=crop&w=600&q=80" alt="Luxury Vitamin C Serum" />
         <h3>Luxury Vitamin C Serum</h3>
-        <p>Brightens, boosts collagen, and protects from free radicals.</p>
-        <a href="https://amzn.to/44C7iQG" target="_blank">Shop Now</a>
+        <p>
+          This luxurious Vitamin C serum is formulated to brighten your skin, boost collagen production, and protect against environmental damage. With antioxidants and nourishing ingredients, it revitalizes dull complexions and promotes a radiant, youthful glow. Ideal for daily use, it absorbs quickly without leaving residue.
+        </p>
+        <a href="https://amzn.to/44C7iQG" target="_blank" rel="noopener">Shop Now</a>
       </div>
       <div class="product-card">
-        <img src="https://m.media-amazon.com/images/I/51wZTcc2ZTL._SL1000_.jpg" alt="Ultra Hydrating Face Cream">
+        <img src="https://images.unsplash.com/photo-1619171207974-7d9b0c7e9cf7?auto=format&fit=crop&w=600&q=80" alt="Ultra Hydrating Face Cream" />
         <h3>Ultra Hydrating Face Cream</h3>
-        <p>Deep hydration with lasting moisture barrier support.</p>
-        <a href="https://amzn.to/4kLoRnP" target="_blank">Shop Now</a>
+        <p>
+          This ultra hydrating face cream delivers intense moisture to dry and sensitive skin. Infused with nourishing oils and vitamins, it strengthens the skin’s moisture barrier and leaves your complexion feeling soft, smooth, and supple all day long. Suitable for all skin types, it is perfect for morning and night skincare routines.
+        </p>
+        <a href="https://amzn.to/4kLoRnP" target="_blank" rel="noopener">Shop Now</a>
       </div>
       <div class="product-card">
-        <img src="https://m.media-amazon.com/images/I/71TkUZJjc4L._SL1500_.jpg" alt="Argan Oil Hair Treatment">
+        <img src="https://images.unsplash.com/photo-1633431240313-4a3d85fcb89e?auto=format&fit=crop&w=600&q=80" alt="Argan Oil Hair Treatment" />
         <h3>Argan Oil Hair Treatment</h3>
-        <p>Nourishes dry, damaged hair and adds shine naturally.</p>
-        <a href="https://amzn.to/4kt6YtK" target="_blank">Shop Now</a>
+        <p>
+          Revitalize your hair with this nourishing Argan oil treatment that restores shine, reduces frizz, and repairs damage. Perfect for dry or color-treated hair, it deeply penetrates the hair shaft to smooth and protect, leaving your locks silky and manageable after just one use.
+        </p>
+        <a href="https://amzn.to/4kt6YtK" target="_blank" rel="noopener">Shop Now</a>
       </div>
       <div class="product-card">
-        <img src="https://m.media-amazon.com/images/I/81NiI+qXk9L._SL1500_.jpg" alt="Glow-Enhancing Face Mask">
+        <img src="https://images.unsplash.com/photo-1620042226786-1e5d19658d69?auto=format&fit=crop&w=600&q=80" alt="Glow-Enhancing Face Mask" />
         <h3>Glow-Enhancing Face Mask</h3>
-        <p>Brightens and purifies for a radiant complexion.</p>
-        <a href="https://amzn.to/44AfO2V" target="_blank">Shop Now</a>
+        <p>
+          Brighten and purify your complexion with this glow-enhancing face mask. Designed to detoxify and nourish skin, it removes impurities while delivering essential hydration. Regular use helps improve skin texture and gives you a healthy, radiant glow that lasts.
+        </p>
+        <a href="https://amzn.to/44AfO2V" target="_blank" rel="noopener">Shop Now</a>
       </div>
       <div class="product-card">
-        <img src="https://m.media-amazon.com/images/I/61eRSZ-Kr0L._SL1500_.jpg" alt="Revitalizing Night Serum">
+        <img src="https://images.unsplash.com/photo-1598511724644-cd58e0b3e9ec?auto=format&fit=crop&w=600&q=80" alt="Revitalizing Night Serum" />
         <h3>Revitalizing Night Serum</h3>
-        <p>Supports overnight renewal and smoother texture.</p>
-        <a href="https://amzn.to/44AfTUh" target="_blank">Shop Now</a>
+        <p>
+          Support your skin’s overnight renewal process with this revitalizing night serum. It works to smooth fine lines and improve skin texture while you sleep, leaving you with softer, more youthful skin by morning. Lightweight and fast-absorbing, it pairs perfectly with your nightly routine.
+        </p>
+        <a href="https://amzn.to/44AfTUh" target="_blank" rel="noopener">Shop Now</a>
       </div>
       <div class="product-card">
-        <img src="https://m.media-amazon.com/images/I/61R4cJK4YpL._SL1500_.jpg" alt="Anti-Aging Cream">
+        <img src="https://images.unsplash.com/photo-1585238341986-83c41b44f25b?auto=format&fit=crop&w=600&q=80" alt="Anti-Aging Cream" />
         <h3>Anti-Aging Cream</h3>
-        <p>Reduces wrinkles and firms skin for a youthful glow.</p>
-        <a href="https://amzn.to/45Tbazg" target="_blank">Shop Now</a>
+        <p>
+          This anti-aging cream helps reduce the appearance of wrinkles and firms the skin for a more youthful look. Enriched with peptides and antioxidants, it hydrates deeply and promotes elasticity. Ideal for daily use, it smooths and revitalizes tired skin.
+        </p>
+        <a href="https://amzn.to/45Tbazg" target="_blank" rel="noopener">Shop Now</a>
       </div>
       <div class="product-card">
-        <img src="https://m.media-amazon.com/images/I/61Z5c
+        <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=600&q=80" alt="Hydra Booster Mist" />
+        <h3>Hydra Booster Mist</h3>
+        <p>
+          Refresh and hydrate your skin instantly with this hydra booster mist. Perfect for all skin types, it replenishes moisture and helps plump skin for a dewy, radiant finish throughout the day. Use it over makeup or on bare skin whenever you need a quick pick-me-up.
+        </p>
+        <a href="https://amzn.to/4lOMm09" target="_blank" rel="noopener">Shop Now</a>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1623450282230-68b49ad24d90?auto=format&fit=crop&w=600&q=80" alt="Gentle Face Cleanser" />
+        <h3>Gentle Face Cleanser</h3>
+        <p>
+          This gentle face cleanser effectively removes dirt and makeup without stripping natural oils. Suitable for sensitive skin, it leaves your face feeling clean, soft, and balanced. Use morning and night to maintain a healthy, refreshed complexion.
+        </p>
+        <a href="https://amzn.to/4lLL0TS" target="_blank" rel="noopener">Shop Now</a>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1610974911557-dc898236a698?auto=format&fit=crop&w=600&q=80" alt="Firming Eye Cream" />
+        <h3>Firming Eye Cream</h3>
+        <p>
+          Minimize puffiness and fine lines around your eyes with this firming eye cream. It provides gentle hydration and helps rejuvenate delicate skin, leaving your eyes looking bright, rested, and youthful. Perfect for daily use.
+        </p>
+        <a href="https://amzn.to/40FqNGZ" target="_blank" rel="noopener">Shop Now</a>
+      </div>
+    </section>
+
+    <section class="about">
+      <p>We handpick premium skincare and beauty essentials to help you feel confident, radiant, and effortlessly you.</p>
+    </section>
+  </div>
+
+  <footer>
+    © 2025 Premium Beauty Finds — Affiliate links may earn commission.
+  </footer>
+</body>
+</html>
