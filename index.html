@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Premium Beauty Finds</title>
+
+  <!-- Add Google Font for a more girly style -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Arial&display=swap" rel="stylesheet" />
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -31,9 +35,20 @@
     }
     header h1 {
       position: relative;
-      color: #fff;
-      font-size: 3rem;
-      letter-spacing: 2px;
+      /* Use the cursive font with a fallback */
+      font-family: 'Pacifico', cursive, 'Arial', sans-serif;
+      font-size: 3.5rem;
+      letter-spacing: 3px;
+
+      /* Pink gradient text */
+      background: linear-gradient(45deg, #ff69b4, #ff85c1, #ffb6d9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      /* Add a subtle pink glow */
+      text-shadow:
+        0 0 8px rgba(255,105,180,0.6),
+        0 0 12px rgba(255,182,193,0.4);
     }
 
     .container {
@@ -113,7 +128,7 @@
     }
 
     @media (max-width: 768px) {
-      header h1 { font-size: 2.2rem; }
+      header h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
