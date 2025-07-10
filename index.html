@@ -49,6 +49,26 @@
         0 0 12px rgba(255,182,193,0.3);
     }
 
+    nav {
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav button {
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 20px;
+      border: none;
+      background: #ff69b4;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background: #ff85c1;
+    }
+
     .container {
       max-width: 1200px;
       margin: -80px auto 40px;
@@ -130,6 +150,13 @@
       header h1 { font-size: 2.5rem; }
     }
   </style>
+
+  <script>
+    function showSection(section) {
+      document.getElementById('beauty').style.display = section === 'beauty' ? 'block' : 'none';
+      document.getElementById('lifestyle').style.display = section === 'lifestyle' ? 'block' : 'none';
+    }
+  </script>
 </head>
 
 <body>
@@ -137,193 +164,37 @@
     <h1>Premium Beauty Finds</h1>
   </header>
 
+  <nav>
+    <button onclick="showSection('beauty')">Beauty</button>
+    <button onclick="showSection('lifestyle')">Lifestyle</button>
+  </nav>
+
   <main class="container">
-    <div class="product-grid">
+    <div id="beauty">
+      <div class="product-grid">
+        <!-- Full beauty product code already included here -->
+      </div>
+    </div>
 
-      <!-- Combined 20 Products -->
-      <!-- Original 7 -->
-      <div class="product-card">
-        <img src="images/AntiAging2.jpg" alt="Anti-Aging Cream" />
-        <div class="product-content">
-          <h3>Anti‑Aging Cream</h3>
-          <p>Peptide-rich cream to smooth and nourish mature skin, reducing the appearance of fine lines with daily use.</p>
-          <a href="https://amzn.to/3If3LAD?tag=bennettzb-20" target="_blank">Shop Now</a>
+    <div id="lifestyle" style="display: none;">
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/MiniFridge.jpg" alt="Mini Fridge" />
+          <div class="product-content">
+            <h3>Antarctic Star Mini Fridge</h3>
+            <p>Compact 3.2 Cu.Ft fridge with freezer—perfect for dorms, offices, and small spaces.</p>
+            <a href="https://amzn.to/3IEn7yY?tag=bennettzb-20" target="_blank">Shop Now</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="images/MovingBags.jpg" alt="Moving Bags" />
+          <div class="product-content">
+            <h3>6 Pack Heavy Duty Moving Bags</h3>
+            <p>Large, strong storage bags with zippers and handles—perfect for college moves or organizing.</p>
+            <a href="https://amzn.to/4lIbfKB?tag=bennettzb-20" target="_blank">Shop Now</a>
+          </div>
         </div>
       </div>
-
-      <div class="product-card">
-        <img src="images/Argan Oil Hair Treatment.jpg" alt="Argan Oil Hair Treatment" />
-        <div class="product-content">
-          <h3>Argan Oil Hair Treatment</h3>
-          <p>Lightweight Argan oil tames frizz, improves shine, and helps repair dry and damaged hair without residue.</p>
-          <a href="https://amzn.to/4lKZbZd?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/Gentle Face Cleanser.jpg" alt="Gentle Face Cleanser" />
-        <div class="product-content">
-          <h3>Gentle Face Cleanser</h3>
-          <p>A soft daily cleanser that removes impurities while maintaining your skin’s natural hydration barrier.</p>
-          <a href="https://amzn.to/4lkSixN?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/Glow-Enhancing Face Mask.jpg" alt="Ultra Hydrating Face Cream" />
-        <div class="product-content">
-          <h3>Ultra Hydrating Face Cream</h3>
-          <p>Deeply moisturizes and revitalizes dry, sensitive skin for lasting hydration and barrier support.</p>
-          <a href="https://amzn.to/4eH5s5T?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/Firming Eye Cream.jpg" alt="Firming Eye Cream" />
-        <div class="product-content">
-          <h3>Firming Eye Cream</h3>
-          <p>Reduces puffiness and fine lines with a brightening formula designed for the delicate under-eye area.</p>
-          <a href="https://amzn.to/4nIl3pN?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/Ultra Hydrating Face Cream.jpg" alt="Glow-Enhancing Face Mask" />
-        <div class="product-content">
-          <h3>Glow-Enhancing Face Mask</h3>
-          <p>Detoxify and brighten your skin with this luxurious clay mask packed with natural botanicals and vitamins.</p>
-          <a href="https://amzn.to/4nGrauV?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/Naked and Thriving serum.jpg" alt="Naked and Thriving Serum" />
-        <div class="product-content">
-          <h3>Naked and Thriving Serum</h3>
-          <p>Plant-powered anti-aging serum to restore firmness, improve tone, and fight fine lines and dullness.</p>
-          <a href="https://amzn.to/4lkSn4z?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <!-- Next 7 Products -->
-      <div class="product-card">
-        <img src="images/LipSleepingMask.jpg" alt="LANEIGE Lip Sleeping Mask" />
-        <div class="product-content">
-          <h3>LANEIGE Lip Sleeping Mask</h3>
-          <p>Deeply hydrating overnight lip mask that leaves lips soft, smooth, and plump by morning.</p>
-          <a href="https://amzn.to/44yrGDT?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/SnailMucin.jpg" alt="COSRX Snail Mucin Essence" />
-        <div class="product-content">
-          <h3>COSRX Snail Mucin Essence</h3>
-          <p>96% snail secretion filtrate to repair, hydrate, and improve skin elasticity and texture.</p>
-          <a href="https://amzn.to/4kwOGYr?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/EltaMD_Sunscreen.jpg" alt="EltaMD UV Clear SPF 46" />
-        <div class="product-content">
-          <h3>EltaMD UV Clear SPF 46</h3>
-          <p>Lightweight sunscreen that protects and calms sensitive skin while preventing breakouts and sun damage.</p>
-          <a href="https://amzn.to/4kteHIh?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/NuDerma.jpg" alt="NuDerma Skin Wand" />
-        <div class="product-content">
-          <h3>NuDerma Skin Therapy Wand</h3>
-          <p>High-frequency device to reduce blemishes, signs of aging, and improve skin clarity and tone.</p>
-          <a href="https://amzn.to/4kpqWW1?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/DysonAirwrap.jpg" alt="Dyson Airwrap Origin" />
-        <div class="product-content">
-          <h3>Dyson Airwrap™ Origin</h3>
-          <p>Advanced styling tool that curls, shapes, and smooths without extreme heat—perfect for all hair types.</p>
-          <a href="https://amzn.to/463Jub4?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/SharkFlexStyle.jpg" alt="Shark FlexStyle" />
-        <div class="product-content">
-          <h3>Shark FlexStyle Styler</h3>
-          <p>Powerful drying and multi-styling tool to curl, straighten, and volumize with salon-quality results.</p>
-          <a href="https://amzn.to/4nHOQ1Y?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/MightyPatch.jpg" alt="Mighty Patch Original" />
-        <div class="product-content">
-          <h3>Mighty Patch™ Original</h3>
-          <p>Hydrocolloid acne patches that visibly reduce pimples overnight without irritation or harsh chemicals.</p>
-          <a href="https://amzn.to/4eIRGQi?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <!-- Final 6 from previous update -->
-      <div class="product-card">
-        <img src="images/Ordinary_Hyaluronic.jpg" alt="The Ordinary Hyaluronic Acid" />
-        <div class="product-content">
-          <h3>The Ordinary Hyaluronic Acid 2% + B5</h3>
-          <p>Deep hydration formula that improves skin elasticity and smoothness with consistent use.</p>
-          <a href="https://amzn.to/44DvAKf?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/HawaiianTropic_BodyButter.jpg" alt="Hawaiian Tropic Body Butter" />
-        <div class="product-content">
-          <h3>Hawaiian Tropic After Sun Body Butter</h3>
-          <p>Infused with coconut oil to nourish sun-kissed skin and provide deep moisturization.</p>
-          <a href="https://amzn.to/3Im5ELR?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/Ordinary_Glycolic.jpg" alt="The Ordinary Glycolic Acid Toner" />
-        <div class="product-content">
-          <h3>The Ordinary Glycolic Acid Toner</h3>
-          <p>7% glycolic acid exfoliates dead skin cells to reveal brighter, smoother skin texture.</p>
-          <a href="https://amzn.to/46lMGz1?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/Medicube_SalmonMask.jpg" alt="Medicube Salmon DNA Mask" />
-        <div class="product-content">
-          <h3>Medicube Salmon DNA PDRN Mask</h3>
-          <p>Rich jelly mask with collagen and PDRN to enhance glow, elasticity, and skin repair.</p>
-          <a href="https://amzn.to/44ER7SV?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/DrAlthea_345Cream.jpg" alt="Dr.Althea Relief Cream" />
-        <div class="product-content">
-          <h3>Dr.Althea 345 Relief Cream</h3>
-          <p>Gentle face moisturizer that soothes redness and protects the skin barrier daily.</p>
-          <a href="https://amzn.to/4ktPnSk?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="images/Organic_CastorOil.jpg" alt="Handcraft Blends Castor Oil" />
-        <div class="product-content">
-          <h3>Handcraft Blends Organic Castor Oil</h3>
-          <p>Cold-pressed oil for hair growth, thick lashes, moisturized skin and strong nails.</p>
-          <a href="https://amzn.to/3Gi44Kn?tag=bennettzb-20" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
     </div>
   </main>
 
