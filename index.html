@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Premium Beauty Finds</title>
-
-  <!-- Girly cursive font -->
+  <title>ShopDeals</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
-
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -16,7 +13,6 @@
       color: #333;
       line-height: 1.6;
     }
-
     a { color: inherit; text-decoration: none; }
 
     header {
@@ -27,7 +23,6 @@
       justify-content: center;
       position: relative;
     }
-
     header::before {
       content: '';
       position: absolute;
@@ -35,7 +30,6 @@
       width: 100%; height: 100%;
       background: rgba(255, 182, 193, 0.25);
     }
-
     header h1 {
       position: relative;
       font-family: 'Pacifico', cursive;
@@ -44,42 +38,43 @@
       background: linear-gradient(45deg, #ff69b4, #ff85c1, #ffb6d9);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow:
-        0 0 8px rgba(255,105,180,0.5),
-        0 0 12px rgba(255,182,193,0.3);
+      text-shadow: 0 0 8px rgba(255,105,180,0.5), 0 0 12px rgba(255,182,193,0.3);
     }
 
     nav {
-      text-align: center;
-      padding: 20px;
+      display: flex;
+      justify-content: center;
+      margin-top: -40px;
     }
-
-    nav button {
-      padding: 10px 20px;
-      margin: 5px;
-      border-radius: 20px;
-      border: none;
+    .tab-button {
+      background: #fff;
+      border: 2px solid #ff69b4;
+      border-radius: 25px 25px 0 0;
+      padding: 10px 30px;
+      margin: 0 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #ff69b4;
+      transition: all 0.3s;
+    }
+    .tab-button.active {
       background: #ff69b4;
       color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    nav button:hover {
-      background: #ff85c1;
     }
 
     .container {
       max-width: 1200px;
-      margin: -80px auto 40px;
+      margin: 0 auto 40px;
       padding: 0 20px;
     }
 
     .product-grid {
-      display: grid;
+      display: none;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
+      margin-top: 30px;
     }
+    .product-grid.active { display: grid; }
 
     .product-card {
       background: #fff;
@@ -90,38 +85,32 @@
       flex-direction: column;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-
     .product-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
     }
-
     .product-card img {
       width: 100%;
       height: 220px;
       object-fit: cover;
     }
-
     .product-content {
       padding: 20px;
       flex: 1;
       display: flex;
       flex-direction: column;
     }
-
     .product-content h3 {
       font-size: 1.2rem;
       margin-bottom: 10px;
       color: #d63384;
     }
-
     .product-content p {
       font-size: 0.95rem;
       color: #555;
       flex-grow: 1;
       margin-bottom: 15px;
     }
-
     .product-content a {
       align-self: flex-start;
       background: #ff69b4;
@@ -131,7 +120,6 @@
       font-weight: bold;
       transition: background 0.3s;
     }
-
     .product-content a:hover {
       background: #ff85c1;
     }
@@ -148,32 +136,24 @@
 
     @media (max-width: 768px) {
       header h1 { font-size: 2.5rem; }
+      .tab-button { padding: 8px 16px; font-size: 0.9rem; }
     }
   </style>
-
-  <script>
-    function showSection(section) {
-      document.getElementById('beauty').style.display = section === 'beauty' ? 'block' : 'none';
-      document.getElementById('lifestyle').style.display = section === 'lifestyle' ? 'block' : 'none';
-    }
-  </script>
 </head>
-
 <body>
   <header>
-    <h1>Premium Beauty Finds</h1>
+    <h1>ShopDeals</h1>
   </header>
 
   <nav>
-    <button onclick="showSection('beauty')">Beauty</button>
-    <button onclick="showSection('lifestyle')">Lifestyle</button>
+    <button class="tab-button active" onclick="showTab('beauty')">Beauty Products</button>
+    <button class="tab-button" onclick="showTab('lifestyle')">Lifestyle Products</button>
   </nav>
 
   <main class="container">
-    <div id="beauty">
-      <div class="product-grid">
-        
- <div class="product-card">
+    <div id="beauty" class="product-grid active">
+      <!-- PLACE YOUR BEAUTY PRODUCTS HERE -->
+     <div class="product-card">
         <img src="images/AntiAging2.jpg" alt="Anti-Aging Cream" />
         <div class="product-content">
           <h3>Anti‑Aging Cream</h3>
@@ -181,7 +161,8 @@
           <a href="https://amzn.to/3If3LAD?tag=bennettzb-20" target="_blank">Shop Now</a>
         </div>
       </div>
-        <div class="product-card">
+
+      <div class="product-card">
         <img src="images/Argan Oil Hair Treatment.jpg" alt="Argan Oil Hair Treatment" />
         <div class="product-content">
           <h3>Argan Oil Hair Treatment</h3>
@@ -189,7 +170,8 @@
           <a href="https://amzn.to/4lKZbZd?tag=bennettzb-20" target="_blank">Shop Now</a>
         </div>
       </div>
-        <div class="product-card">
+
+      <div class="product-card">
         <img src="images/Gentle Face Cleanser.jpg" alt="Gentle Face Cleanser" />
         <div class="product-content">
           <h3>Gentle Face Cleanser</h3>
@@ -197,7 +179,8 @@
           <a href="https://amzn.to/4lkSixN?tag=bennettzb-20" target="_blank">Shop Now</a>
         </div>
       </div>
-        <div class="product-card">
+
+      <div class="product-card">
         <img src="images/Glow-Enhancing Face Mask.jpg" alt="Ultra Hydrating Face Cream" />
         <div class="product-content">
           <h3>Ultra Hydrating Face Cream</h3>
@@ -205,7 +188,8 @@
           <a href="https://amzn.to/4eH5s5T?tag=bennettzb-20" target="_blank">Shop Now</a>
         </div>
       </div>
-        <div class="product-card">
+
+      <div class="product-card">
         <img src="images/Firming Eye Cream.jpg" alt="Firming Eye Cream" />
         <div class="product-content">
           <h3>Firming Eye Cream</h3>
@@ -213,7 +197,8 @@
           <a href="https://amzn.to/4nIl3pN?tag=bennettzb-20" target="_blank">Shop Now</a>
         </div>
       </div>
-        <div class="product-card">
+
+      <div class="product-card">
         <img src="images/Ultra Hydrating Face Cream.jpg" alt="Glow-Enhancing Face Mask" />
         <div class="product-content">
           <h3>Glow-Enhancing Face Mask</h3>
@@ -221,7 +206,8 @@
           <a href="https://amzn.to/4nGrauV?tag=bennettzb-20" target="_blank">Shop Now</a>
         </div>
       </div>
-        <div class="product-card">
+
+      <div class="product-card">
         <img src="images/Naked and Thriving serum.jpg" alt="Naked and Thriving Serum" />
         <div class="product-content">
           <h3>Naked and Thriving Serum</h3>
@@ -330,6 +316,7 @@
           <a href="https://amzn.to/44ER7SV?tag=bennettzb-20" target="_blank">Shop Now</a>
         </div>
       </div>
+
       <div class="product-card">
         <img src="images/DrAlthea_345Cream.jpg" alt="Dr.Althea Relief Cream" />
         <div class="product-content">
@@ -347,30 +334,27 @@
           <a href="https://amzn.to/3Gi44Kn?tag=bennettzb-20" target="_blank">Shop Now</a>
         </div>
       </div>
-    <div id="lifestyle" style="display: none;">
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="images/MiniFridge.jpg" alt="Mini Fridge" />
-          <div class="product-content">
-            <h3>Antarctic Star Mini Fridge</h3>
-            <p>Compact 3.2 Cu.Ft fridge with freezer—perfect for dorms, offices, and small spaces.</p>
-            <a href="https://amzn.to/3IEn7yY?tag=bennettzb-20" target="_blank">Shop Now</a>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="images/MovingBags.jpg" alt="Moving Bags" />
-          <div class="product-content">
-            <h3>6 Pack Heavy Duty Moving Bags</h3>
-            <p>Large, strong storage bags with zippers and handles—perfect for college moves or organizing.</p>
-            <a href="https://amzn.to/4lIbfKB?tag=bennettzb-20" target="_blank">Shop Now</a>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div id="lifestyle" class="product-grid">
+      <!-- PLACE YOUR LIFESTYLE PRODUCTS HERE -->
     </div>
   </main>
 
   <footer>
-    © 2025 Premium Beauty Finds — Affiliate links may earn commission.
+    © 2025 ShopDeals — Affiliate links may earn commission.
   </footer>
+
+  <script>
+    function showTab(tabName) {
+      const grids = document.querySelectorAll('.product-grid');
+      const buttons = document.querySelectorAll('.tab-button');
+
+      grids.forEach(grid => grid.classList.remove('active'));
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById(tabName).classList.add('active');
+      document.querySelector(`.tab-button[onclick*='${tabName}']`).classList.add('active');
+    }
+  </script>
 </body>
 </html>
