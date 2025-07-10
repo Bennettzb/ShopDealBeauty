@@ -4,15 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ShopDeals</title>
+
+  <!-- Girly cursive font -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Arial', sans-serif;
-      background: #fff5f9;
+      background: #f0f8ff; /* light blue background */
       color: #333;
       line-height: 1.6;
     }
+
     a { color: inherit; text-decoration: none; }
 
     header {
@@ -23,105 +27,94 @@
       justify-content: center;
       position: relative;
     }
+
     header::before {
       content: '';
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(255, 182, 193, 0.25);
+      background: rgba(70, 130, 180, 0.25); /* steelblue overlay */
     }
+
     header h1 {
       position: relative;
       font-family: 'Pacifico', cursive;
       font-size: 3.5rem;
       letter-spacing: 3px;
-      background: linear-gradient(45deg, #ff69b4, #ff85c1, #ffb6d9);
+      background: linear-gradient(45deg, #1e90ff, #6495ed, #87cefa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 8px rgba(255,105,180,0.5), 0 0 12px rgba(255,182,193,0.3);
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      margin-top: -40px;
-    }
-    .tab-button {
-      background: #fff;
-      border: 2px solid #ff69b4;
-      border-radius: 25px 25px 0 0;
-      padding: 10px 30px;
-      margin: 0 10px;
-      cursor: pointer;
-      font-weight: bold;
-      color: #ff69b4;
-      transition: all 0.3s;
-    }
-    .tab-button.active {
-      background: #ff69b4;
-      color: white;
+      text-shadow:
+        0 0 8px rgba(30, 144, 255, 0.6),
+        0 0 12px rgba(100, 149, 237, 0.4);
     }
 
     .container {
       max-width: 1200px;
-      margin: 0 auto 40px;
+      margin: -80px auto 40px;
       padding: 0 20px;
     }
 
     .product-grid {
-      display: none;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* smaller cards */
+      gap: 20px;
     }
-    .product-grid.active { display: grid; }
 
     .product-card {
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2);
+      box-shadow: 0 4px 12px rgba(70, 130, 180, 0.2);
       overflow: hidden;
       display: flex;
       flex-direction: column;
       transition: transform 0.3s, box-shadow 0.3s;
     }
+
     .product-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+      box-shadow: 0 8px 20px rgba(30, 144, 255, 0.3);
     }
+
     .product-card img {
       width: 100%;
-      height: 220px;
+      height: 160px; /* smaller height */
       object-fit: cover;
     }
+
     .product-content {
-      padding: 20px;
+      padding: 15px;
       flex: 1;
       display: flex;
       flex-direction: column;
     }
+
     .product-content h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: #d63384;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #1e90ff;
     }
+
     .product-content p {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: #555;
       flex-grow: 1;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
+
     .product-content a {
       align-self: flex-start;
-      background: #ff69b4;
+      background: #1e90ff;
       color: #fff;
-      padding: 10px 18px;
+      padding: 8px 14px;
       border-radius: 20px;
       font-weight: bold;
+      font-size: 0.9rem;
       transition: background 0.3s;
     }
+
     .product-content a:hover {
-      background: #ff85c1;
+      background: #3a99f7;
     }
 
     footer {
@@ -136,25 +129,26 @@
 
     @media (max-width: 768px) {
       header h1 { font-size: 2.5rem; }
-      .tab-button { padding: 8px 16px; font-size: 0.9rem; }
+      .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+      .product-card img {
+        height: 130px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>ShopDeals</h1>
   </header>
 
-  <nav>
-    <button class="tab-button active" onclick="showTab('beauty')">Beauty</button>
-    <button class="tab-button" onclick="showTab('lifestyle')">Lifestyle</button>
-  </nav>
-
   <main class="container">
-    <div id="beauty" class="product-grid active">
-      <!-- Beauty Section -->
-      <!-- PLACE YOUR BEAUTY PRODUCTS HERE -->
-     <div class="product-card">
+    <div class="product-grid">
+
+      <!-- Original 7 Products -->
+      <div class="product-card">
         <img src="images/AntiAging2.jpg" alt="Anti-Aging Cream" />
         <div class="product-content">
           <h3>Anti‑Aging Cream</h3>
@@ -217,7 +211,7 @@
         </div>
       </div>
 
-      <!-- Next 7 Products -->
+      <!-- Add other products similarly ... -->
       <div class="product-card">
         <img src="images/LipSleepingMask.jpg" alt="LANEIGE Lip Sleeping Mask" />
         <div class="product-content">
@@ -335,10 +329,6 @@
           <a href="https://amzn.to/3Gi44Kn?tag=bennettzb-20" target="_blank">Shop Now</a>
         </div>
       </div>
-    </div>
-    <div id="lifestyle" class="product-grid">
-      <div id="lifestyle" style="display: none;">
-      <!-- PLACE YOUR LIFESTYLE PRODUCTS HERE -->
       <div class="product-grid">
         <div class="product-card">
           <img src="images/MiniFridge.jpg" alt="Mini Fridge" />
@@ -357,26 +347,12 @@
             <a href="https://amzn.to/4lIbfKB?tag=bennettzb-20" target="_blank">Shop Now</a>
           </div>
         </div>
-      </div>
-    </div>
+
     </div>
   </main>
 
   <footer>
     © 2025 ShopDeals — Affiliate links may earn commission.
   </footer>
-
-  <script>
-    function showTab(tabName) {
-      const grids = document.querySelectorAll('.product-grid');
-      const buttons = document.querySelectorAll('.tab-button');
-
-      grids.forEach(grid => grid.classList.remove('active'));
-      buttons.forEach(btn => btn.classList.remove('active'));
-
-      document.getElementById(tabName).classList.add('active');
-      document.querySelector(`.tab-button[onclick*='${tabName}']`).classList.add('active');
-    }
-  </script>
 </body>
 </html>
